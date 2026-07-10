@@ -1,0 +1,570 @@
+<title>チャネリング＆ヒーリング講座 | 視える潜在意識コーチ まきろん</title>
+<style>
+  :root {
+    /* base palette (theme-independent) */
+    --ink-950: #0b0c12;
+    --paper: #f5f3ee;
+    --text-dark: #efe9dd;
+    --text-dark-dim: #b8b2a3;
+    --text-light: #1a1a22;
+    --text-light-dim: #55534d;
+    --line-dark: rgba(239, 233, 221, 0.14);
+    --line-light: rgba(26, 26, 34, 0.12);
+    --gold: #c9a54e;
+    --gold-bright: #e3c983;
+    --gold-deep: #8a6a20;
+    --violet-tint: rgba(134, 114, 194, 0.16);
+
+    --c1: #b5493f; /* 第1チャクラ 赤 */
+    --c2: #c97a3d; /* 第2チャクラ 橙 */
+    --c3: #c9a54e; /* 第3チャクラ 黄→金で統一 */
+    --c4: #5f8f6e; /* 第4チャクラ 緑 */
+    --c5: #4d7ea8; /* 第5チャクラ 青 */
+    --c6: #8672c2; /* 第6チャクラ 紫 */
+
+    --serif: "游明朝体", "Yu Mincho", "YuMincho", "Hiragino Mincho ProN", "Noto Serif JP", serif;
+    --sans: "游ゴシック体", "Yu Gothic", "YuGothic", "Hiragino Kaku Gothic ProN", "Noto Sans JP", sans-serif;
+    --mono: ui-monospace, "SF Mono", "Cascadia Mono", Consolas, monospace;
+
+    /* semantic tokens — dark is the default ground for this subject */
+    --bg: var(--ink-950);
+    --text: var(--text-dark);
+    --text-dim: var(--text-dark-dim);
+    --border: var(--line-dark);
+    --gold-emph: var(--gold-bright);
+    color-scheme: dark;
+  }
+
+  @media (prefers-color-scheme: light) {
+    :root {
+      --bg: var(--paper);
+      --text: var(--text-light);
+      --text-dim: var(--text-light-dim);
+      --border: var(--line-light);
+      --gold-emph: var(--gold-deep);
+      color-scheme: light;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: var(--ink-950);
+    --text: var(--text-dark);
+    --text-dim: var(--text-dark-dim);
+    --border: var(--line-dark);
+    --gold-emph: var(--gold-bright);
+    color-scheme: dark;
+  }
+  :root[data-theme="light"] {
+    --bg: var(--paper);
+    --text: var(--text-light);
+    --text-dim: var(--text-light-dim);
+    --border: var(--line-light);
+    --gold-emph: var(--gold-deep);
+    color-scheme: light;
+  }
+
+  * { box-sizing: border-box; }
+
+  body { background: var(--bg); }
+
+  .lp {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    line-height: 1.9;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  .wrap { max-width: 760px; margin: 0 auto; padding: 0 28px; }
+
+  a { color: inherit; }
+
+  .eyebrow {
+    font-family: var(--mono);
+    font-size: 11.5px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+
+  /* ===== HERO ===== */
+  .hero {
+    position: relative;
+    padding: 100px 0 84px;
+    background: radial-gradient(ellipse 900px 500px at 50% -10%, var(--violet-tint), transparent 65%), var(--bg);
+    border-bottom: 1px solid var(--border);
+  }
+
+  #wave { display: block; width: 100%; height: 120px; margin: 36px 0 8px; opacity: 0.85; }
+
+  .hero-eyebrow { text-align: center; margin-bottom: 22px; }
+
+  h1.headline {
+    font-family: var(--serif);
+    font-size: clamp(30px, 5.4vw, 46px);
+    font-weight: 600;
+    line-height: 1.55;
+    text-align: center;
+    text-wrap: balance;
+    margin: 0 0 26px;
+    letter-spacing: 0.01em;
+  }
+  h1.headline em { font-style: normal; color: var(--gold); }
+
+  .sub { text-align: center; max-width: 540px; margin: 0 auto 40px; font-size: 15.5px; color: var(--text-dim); }
+
+  .cta-row { display: flex; justify-content: center; margin-bottom: 46px; }
+
+  .btn-primary {
+    font-family: var(--sans);
+    font-weight: 700;
+    font-size: 14.5px;
+    letter-spacing: 0.04em;
+    color: var(--ink-950);
+    background: linear-gradient(180deg, var(--gold-bright), var(--gold));
+    padding: 15px 34px;
+    border-radius: 2px;
+    text-decoration: none;
+    display: inline-block;
+    border: 1px solid transparent;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    box-shadow: 0 1px 0 rgba(0,0,0,0.2);
+  }
+  .btn-primary:hover { transform: translateY(-1px); box-shadow: 0 6px 18px rgba(201, 165, 78, 0.25); }
+  .btn-primary:focus-visible { outline: 2px solid var(--gold-bright); outline-offset: 3px; }
+
+  .credibility-strip {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px 0;
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--text-dim);
+    letter-spacing: 0.02em;
+  }
+  .credibility-strip span:not(:last-child)::after { content: "／"; margin: 0 12px; color: var(--gold); opacity: 0.7; }
+
+  /* ===== SCROLL REVEAL ===== */
+  .reveal {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    transition-delay: var(--rd, 0s);
+  }
+  .reveal.is-visible { opacity: 1; transform: translateY(0); }
+  .btn-primary.reveal {
+    transition: opacity 0.5s ease, transform 0.15s ease, box-shadow 0.15s ease;
+    transition-delay: var(--rd, 0s);
+  }
+
+  /* ===== SECTION RHYTHM ===== */
+  section { padding: 72px 0; border-bottom: 1px solid var(--border); }
+  section:last-of-type { border-bottom: none; }
+
+  h2.section-title {
+    font-family: var(--serif);
+    font-size: clamp(22px, 3.6vw, 28px);
+    font-weight: 600;
+    line-height: 1.5;
+    text-wrap: balance;
+    margin: 10px 0 30px;
+  }
+
+  p { margin: 0 0 1.1em; max-width: 62ch; }
+  p:last-child { margin-bottom: 0; }
+
+  /* ===== INTRO / VOICE LETTER ===== */
+  .letter { font-size: 15.5px; }
+  .letter .signoff { margin-top: 28px; font-family: var(--serif); font-size: 15px; color: var(--gold); }
+
+  /* ===== STATS ===== */
+  .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border: 1px solid var(--border); }
+  .stat { padding: 22px 14px; text-align: center; border-right: 1px solid var(--border); }
+  .stat:last-child { border-right: none; }
+  .stat .num {
+    font-family: var(--mono);
+    font-variant-numeric: tabular-nums;
+    font-size: clamp(20px, 4vw, 27px);
+    color: var(--gold);
+    display: block;
+    margin-bottom: 6px;
+  }
+  .stat .label { font-size: 11.5px; color: var(--text-dim); letter-spacing: 0.02em; }
+
+  /* ===== POSITIONING ===== */
+  .pull {
+    font-family: var(--serif);
+    font-size: 19px;
+    line-height: 1.9;
+    color: var(--gold-emph);
+    border-left: 2px solid var(--gold);
+    padding-left: 20px;
+    margin: 8px 0 28px;
+  }
+
+  /* ===== SCREENING TWIN LIST ===== */
+  .screen-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0 40px; }
+  .screen-col h3 {
+    font-family: var(--serif);
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0 0 16px;
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+  }
+  .screen-col.yes h3 { color: var(--gold-emph); }
+  .screen-col.no h3 { color: var(--text-dim); }
+  .screen-col ul { list-style: none; margin: 0; padding: 0; }
+  .screen-col li { font-size: 14px; padding: 11px 0; border-top: 1px solid var(--border); display: flex; gap: 10px; }
+  .screen-col li:last-child { padding-bottom: 0; }
+  .screen-col.yes li::before { content: "○"; color: var(--gold); flex-shrink: 0; }
+  .screen-col.no li::before { content: "×"; color: var(--text-dim); flex-shrink: 0; }
+
+  @media (max-width: 620px) {
+    .screen-grid { grid-template-columns: 1fr; gap: 32px; }
+  }
+
+  /* ===== CURRICULUM SPINE ===== */
+  .curriculum-intro { color: var(--text-dim); font-size: 14px; margin-bottom: 40px; }
+
+  .spine { position: relative; padding-left: 34px; }
+  .spine::before {
+    content: "";
+    position: absolute;
+    left: 6px;
+    top: 6px;
+    bottom: 6px;
+    width: 1px;
+    background: linear-gradient(var(--c1), var(--c2), var(--c3), var(--c4), var(--c5), var(--c6));
+  }
+  .session { position: relative; padding-bottom: 38px; }
+  .session:last-child { padding-bottom: 0; }
+  .session::before {
+    content: "";
+    position: absolute;
+    left: -34px;
+    top: 4px;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background: var(--dot);
+    box-shadow: 0 0 0 4px var(--bg);
+  }
+  .session .meta { font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em; color: var(--dot); margin-bottom: 6px; }
+  .session h4 { font-family: var(--serif); font-size: 17px; font-weight: 600; margin: 0 0 8px; line-height: 1.6; }
+  .session p { font-size: 14px; color: var(--text-dim); max-width: 54ch; }
+
+  /* ===== OVERVIEW PANEL ===== */
+  .panel { border: 1px solid var(--border); padding: 4px; }
+  .panel-inner { display: grid; grid-template-columns: 1fr; }
+  .panel-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 16px 20px;
+    border-top: 1px solid var(--border);
+    gap: 20px;
+  }
+  .panel-row:first-child { border-top: none; }
+  .panel-row .k { font-family: var(--mono); font-size: 11.5px; letter-spacing: 0.06em; color: var(--text-dim); white-space: nowrap; }
+  .panel-row .v { font-size: 15px; text-align: right; }
+  .panel-row .v.price { font-family: var(--mono); font-size: 20px; color: var(--gold); font-variant-numeric: tabular-nums; }
+  .panel-row .v.price .unit { font-size: 12px; color: var(--text-dim); margin-left: 6px; font-family: var(--sans); }
+
+  .capacity-note { display: flex; align-items: center; gap: 16px; margin-top: 24px; }
+  .dial { flex-shrink: 0; }
+  .capacity-note .txt { font-size: 13px; color: var(--text-dim); }
+
+  /* ===== FAQ ===== */
+  .faq-item { border-top: 1px solid var(--border); padding: 22px 0; }
+  .faq-item:last-child { padding-bottom: 0; }
+  .faq-item .q { font-family: var(--serif); font-weight: 600; font-size: 15.5px; margin: 0 0 10px; display: flex; gap: 12px; }
+  .faq-item .q .qmark { color: var(--gold); flex-shrink: 0; }
+  .faq-item .a { font-size: 14px; color: var(--text-dim); margin: 0; padding-left: 26px; }
+
+  /* ===== FINAL CTA ===== */
+  .final {
+    text-align: center;
+    padding: 90px 0 100px;
+    background: radial-gradient(ellipse 700px 400px at 50% 100%, rgba(201, 165, 78, 0.10), transparent 70%);
+  }
+  .final h2 { font-family: var(--serif); font-size: clamp(24px, 4.4vw, 32px); text-wrap: balance; margin: 0 0 20px; }
+  .final p { margin: 0 auto 34px; color: var(--text-dim); font-size: 14.5px; }
+  .listen-note { margin: -14px 0 30px; font-size: 13px; color: var(--text-dim); }
+  .listen-note a { color: var(--gold-emph); text-decoration: underline; text-underline-offset: 3px; }
+
+  /* ===== FOOTER ===== */
+  footer { padding: 40px 0 60px; text-align: center; font-family: var(--mono); font-size: 11.5px; color: var(--text-dim); letter-spacing: 0.03em; }
+  footer .links { margin-bottom: 14px; }
+  footer .links a { margin: 0 10px; text-decoration: underline; text-underline-offset: 3px; }
+
+  @media (max-width: 560px) {
+    .wrap { padding: 0 20px; }
+    .hero { padding: 72px 0 60px; }
+    section { padding: 56px 0; }
+    .stat { padding: 18px 6px; }
+    .panel-row { flex-direction: column; align-items: flex-start; gap: 4px; }
+    .panel-row .v { text-align: left; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { animation: none !important; transition: none !important; }
+  }
+</style>
+
+<div class="lp">
+
+  <div class="hero">
+    <div class="wrap">
+      <div class="hero-eyebrow"><span class="eyebrow">視える潜在意識コーチ まきろん — チャネリング＆ヒーリング講座</span></div>
+      <h1 class="headline">「サイキック」は才能ではなく、<br><em>鍛錬と自己信頼</em>だ。</h1>
+      <canvas id="wave" width="1200" height="120" aria-hidden="true"></canvas>
+      <p class="sub">6500件超のセッションで見えてきた、"サイキックが開く人"の共通点。生まれつき視える者として、初心者から応用者まで——ただし本気の方にだけお伝えします。</p>
+      <div class="cta-row"><a class="btn-primary" href="#overview">募集要項を見る</a></div>
+      <div class="credibility-strip">
+        <span>著書『周波数を上げる教科書』徳間書店・1.6万部</span>
+        <span>セッション実績 6,500件以上</span>
+        <span>業界10年目</span>
+      </div>
+    </div>
+  </div>
+
+  <section>
+    <div class="wrap letter">
+      <p class="reveal-target">皆様こんにちは。「まきろん」こと、視える潜在意識コーチのまきです。</p>
+      <p class="reveal-target">私は生まれつき、視えたり聴こえたりする人間でした。この10年で6,500人以上の方をセッションし、経営者の方、著名人の方、同業者の方……本当にたくさんの「サイキックな力」を求める方と向き合ってきました。</p>
+      <p class="reveal-target">その中で気づいたことがあります。サイキックな力は、特別な人だけのものではありません。けれど、"開く"ところまでたどり着ける人は、ちゃんと覚悟を持って鍛錬してきた人だけです。</p>
+      <p class="reveal-target">今回、久しぶりの「チャネリング＆ヒーリング講座」として、少人数限定で開講します。</p>
+      <p class="signoff reveal-target">まきろん</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="stats">
+        <div class="stat reveal-target" style="--rd:0s"><span class="num">6,500+</span><span class="label">セッション実績</span></div>
+        <div class="stat reveal-target" style="--rd:.08s"><span class="num">10</span><span class="label">年目</span></div>
+        <div class="stat reveal-target" style="--rd:.16s"><span class="num">16,000</span><span class="label">著書 発行部数</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <span class="eyebrow">POSITIONING</span>
+      <h2 class="section-title reveal-target">個々人の能力に合わせつつ、サイキック能力を育てていく。</h2>
+      <p class="pull reveal-target">本講座の目的は、自分の人生の舵を他人の答えではなく、自分の直観で切れるようになること。</p>
+      <p class="reveal-target">そのために、個々のステージに合わせながら「チャネリング」「自己調整」「受け取る力」、そして応用として「ヒーリング」を実践的に学んでいく講座です。</p>
+      <p class="reveal-target">直感や霊感の"鍛え方"を教える講座は、実はほとんど存在しません。6,500件のセッションを通して培ってきた感覚を元に、初心者から既にサイキックが開いている人など、個々のレベルに合わせつつあなた自身のペースでサイキック能力を育てていくための場となります。</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <span class="eyebrow">FOR WHOM</span>
+      <h2 class="section-title reveal-target">本気の方に、来てほしい。</h2>
+      <div class="screen-grid">
+        <div class="screen-col yes">
+          <h3 class="reveal-target">来てほしい方</h3>
+          <ul>
+            <li class="reveal-target" style="--rd:0s">初心者だが、本気でサイキックを鍛えたい方</li>
+            <li class="reveal-target" style="--rd:.06s">感じる力はあるが、再現性がなく自信が持てない方</li>
+            <li class="reveal-target" style="--rd:.12s">直感を、仕事や人生の決断に本気で活かしたい方</li>
+            <li class="reveal-target" style="--rd:.18s">スピリチュアルを「ふわっとした話」で終わらせたくない方</li>
+            <li class="reveal-target" style="--rd:.24s">自分の人生を、自分の感覚で選び取りたい方</li>
+          </ul>
+        </div>
+        <div class="screen-col no">
+          <h3 class="reveal-target">今回はご遠慮ください</h3>
+          <ul>
+            <li class="reveal-target" style="--rd:0s">話のネタ・興味本位で受けたい方</li>
+            <li class="reveal-target" style="--rd:.06s">誰かに答えを与えてもらうことが目的の方</li>
+            <li class="reveal-target" style="--rd:.12s">確実にサイキック能力の開花を保証してほしい方（自己鍛錬が必要です）</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <span class="eyebrow">CURRICULUM</span>
+      <h2 class="section-title reveal-target">全4回。個々人のペースで、本気の能力開発を。</h2>
+      <p class="curriculum-intro reveal-target">対面2回・オンライン2回。松果体開花、ハイヤーセルフとのつながり方、チャクラリーディング、自己浄化——そして、まきろんならではの、一人ひとりのエネルギーや能力の動かし方、つながっている次元を実際に霊視しながら、完全オリジナルでアドバイスするセッションを含みます。</p>
+
+      <div class="spine">
+        <div class="session reveal-target" style="--dot:var(--c1)">
+          <div class="meta">SESSION 01 ／ 対面 ／ 8月15日(土)</div>
+          <h4>現在地の確認と、松果体の活性・チャネリング実践</h4>
+          <p>一人ひとりの現在地を確認したうえで、松果体を活性化し、チャネリングのやり方を実践します。</p>
+        </div>
+        <div class="session reveal-target" style="--dot:var(--gold-bright)">
+          <div class="meta">SESSION 02 ／ 対面 ／ 8月16日(日)</div>
+          <h4>チャクラリーディングとヒーリング、そしてあなたの能力の確認</h4>
+          <p>チャクラの読み取り方とヒーリングを実践したうえで、まきろんならではの視点で、あなたのエネルギーや能力の動かし方、つながっている次元を実際に霊視しながら、完全オリジナルのアドバイスをお届けします。</p>
+        </div>
+        <div class="session reveal-target" style="--dot:var(--c4)">
+          <div class="meta">SESSION 03 ／ Zoom ／ 9月5日(土)</div>
+          <h4>実践練習と質疑応答</h4>
+          <p>対面で学んだことを実践してみての気づきや疑問を共有しながら、さらに練習を重ねます。</p>
+        </div>
+        <div class="session reveal-target" style="--dot:var(--c5)">
+          <div class="meta">SESSION 04 ／ Zoom ／ 9月19日(土)</div>
+          <h4>実践の最終確認とフィードバック</h4>
+          <p>ここまでの実践を踏まえ、最終確認とフィードバックを行います。ここでの気づきが、日常でサイキックを使いこなす力になります。</p>
+        </div>
+      </div>
+
+      <p class="curriculum-intro reveal-target" style="margin-top: 30px;">対面初日からセッション04までの期間、1ヶ月間限定のLINEグループで質疑応答が可能です。</p>
+    </div>
+  </section>
+
+  <section id="overview">
+    <div class="wrap">
+      <span class="eyebrow">OVERVIEW</span>
+      <h2 class="section-title reveal-target">募集要項</h2>
+      <div class="panel reveal-target">
+        <div class="panel-inner">
+          <div class="panel-row"><span class="k">形式</span><span class="v">対面2回＋オンライン（Zoom）2回・少人数グループ</span></div>
+          <div class="panel-row"><span class="k">定員</span><span class="v">5名</span></div>
+          <div class="panel-row"><span class="k">回数</span><span class="v">全4回</span></div>
+          <div class="panel-row"><span class="k">日程（対面）</span><span class="v">2026年8月15日(土)・16日(日）　12:30〜17:30</span></div>
+          <div class="panel-row"><span class="k">日程（Zoom）</span><span class="v">2026年9月5日(土)・19日(土）　10:00〜12:00</span></div>
+          <div class="panel-row"><span class="k">参加費</span><span class="v price">¥80,000<span class="unit">税込・全4回</span></span></div>
+          <div class="panel-row"><span class="k">含まれるもの</span><span class="v">対面2日間・Zoom2回・1ヶ月間限定LINEグループ（質疑応答可）・ワークシート</span></div>
+          <div class="panel-row"><span class="k">募集</span><span class="v">定員に達し次第、締切</span></div>
+        </div>
+      </div>
+      <div class="capacity-note reveal-target">
+        <svg class="dial" width="52" height="52" viewBox="0 0 52 52" aria-hidden="true">
+          <circle cx="26" cy="26" r="22" fill="none" stroke="var(--border)" stroke-width="2"/>
+          <circle cx="26" cy="26" r="22" fill="none" stroke="var(--gold)" stroke-width="2" stroke-dasharray="138.2" stroke-dashoffset="0" stroke-linecap="round" transform="rotate(-90 26 26)"/>
+          <text x="26" y="30" text-anchor="middle" font-family="ui-monospace, monospace" font-size="15" fill="var(--gold)">5</text>
+        </svg>
+        <p class="txt">定員5名。少人数だからこそ、一人ひとりの周波数に届く講座にしています。一定数を超えて募集する予定はありません。</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <span class="eyebrow">FAQ</span>
+      <h2 class="section-title reveal-target">よくある質問</h2>
+
+      <div class="faq-item reveal-target" style="--rd:0s">
+        <p class="q"><span class="qmark">Q.</span>完全な初心者ですが、大丈夫ですか？</p>
+        <p class="a">はい。カリキュラムは対面での現在地確認から始まるため、初めての方でも順を追って進められます。ただし「本気で取り組む」ことが前提です。</p>
+      </div>
+      <div class="faq-item reveal-target" style="--rd:.06s">
+        <p class="q"><span class="qmark">Q.</span>すでに感じる力に自信がある応用者でも意味がありますか？</p>
+        <p class="a">あります。その場合はさらに能力を開花するためのアドバイスやビジネスサポートを行います。</p>
+      </div>
+      <div class="faq-item reveal-target" style="--rd:.12s">
+        <p class="q"><span class="qmark">Q.</span>途中で自分には向いていないと感じたら？</p>
+        <p class="a">ワークですので個人差はあります。ただし4回を通しての継続をお願いしているため、完走を前提にお申し込みください。</p>
+      </div>
+      <div class="faq-item reveal-target" style="--rd:.18s">
+        <p class="q"><span class="qmark">Q.</span>料金に含まれるものは？</p>
+        <p class="a">対面2日間、Zoom2回、1ヶ月間限定LINEグループでの質疑応答、講座内で使用するワークシートが含まれます。</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="final">
+    <div class="wrap">
+      <h2 class="reveal-target">本気で、サイキック能力を開いていきたい方へ</h2>
+      <p class="reveal-target" style="--rd:.06s">定員5名、少人数だからこそできる講座です。また、今後同様のワークショップを開催するか未定となります。本気の方は、下記よりお申し込みください。</p>
+      <p class="listen-note reveal-target" style="--rd:.09s">申し込み前に、<a href="https://stand.fm/episodes/6a487ab638dcc11dcaf63382" target="_blank" rel="noopener">こちらの音声</a>をお聞きください。</p>
+      <a class="btn-primary reveal-target" style="--rd:.12s" href="https://ws.formzu.net/fgen/S805951984/">申し込みフォームへ進む</a>
+    </div>
+  </div>
+
+  <footer>
+    <div class="wrap">
+      <div class="links">
+        <a href="#">note</a>
+        <a href="#">Instagram</a>
+        <a href="#">Threads</a>
+        <a href="#">LINE公式</a>
+      </div>
+      <div>© だいろくのまき（まきろん） — 視える潜在意識コーチ／エネルギーコンサルタント</div>
+    </div>
+  </footer>
+
+</div>
+
+<script>
+(function () {
+  var canvas = document.getElementById('wave');
+  if (!canvas) return;
+  var ctx = canvas.getContext('2d');
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var w = canvas.width, h = canvas.height;
+  var t = 0;
+
+  function colors() {
+    var dark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    var root = document.documentElement;
+    if (root.getAttribute('data-theme') === 'light') dark = false;
+    if (root.getAttribute('data-theme') === 'dark') dark = true;
+    return dark
+      ? { line: 'rgba(227, 201, 131, 0.55)', line2: 'rgba(134, 114, 194, 0.4)' }
+      : { line: 'rgba(138, 106, 32, 0.5)', line2: 'rgba(111, 90, 168, 0.35)' };
+  }
+
+  function draw() {
+    var c = colors();
+    ctx.clearRect(0, 0, w, h);
+
+    ctx.beginPath();
+    for (var x = 0; x <= w; x += 4) {
+      var y = h / 2 + Math.sin((x * 0.018) + t) * 26 * Math.sin(x * 0.003 + 1);
+      if (x === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+    }
+    ctx.strokeStyle = c.line;
+    ctx.lineWidth = 1.4;
+    ctx.stroke();
+
+    ctx.beginPath();
+    for (var x2 = 0; x2 <= w; x2 += 4) {
+      var y2 = h / 2 + Math.sin((x2 * 0.021) + t * 1.3 + 2) * 15;
+      if (x2 === 0) ctx.moveTo(x2, y2); else ctx.lineTo(x2, y2);
+    }
+    ctx.strokeStyle = c.line2;
+    ctx.lineWidth = 1;
+    ctx.stroke();
+
+    if (!reduce) {
+      t += 0.012;
+      requestAnimationFrame(draw);
+    }
+  }
+  draw();
+})();
+
+(function () {
+  var targets = document.querySelectorAll('.reveal-target');
+  if (!targets.length) return;
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (reduce || !('IntersectionObserver' in window)) {
+    targets.forEach(function (el) { el.classList.add('is-visible'); });
+    return;
+  }
+
+  targets.forEach(function (el) { el.classList.add('reveal'); });
+
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
+
+  targets.forEach(function (el) { io.observe(el); });
+})();
+</script>
