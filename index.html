@@ -152,6 +152,22 @@
   }
   .credibility-strip span:not(:last-child)::after { content: "／"; margin: 0 12px; color: var(--gold); opacity: 0.7; }
 
+  /* ===== SOLD OUT ===== */
+  .soldout-wrap { text-align: center; margin: 0 auto 26px; }
+  .soldout-banner {
+    display: inline-block;
+    background: #b5493f;
+    color: #fff;
+    font-family: var(--sans);
+    font-weight: 700;
+    font-size: 15px;
+    letter-spacing: 0.1em;
+    padding: 11px 30px;
+    border-radius: 100px;
+    box-shadow: 0 2px 12px rgba(181, 73, 63, 0.3);
+  }
+  .final .soldout-banner { margin-bottom: 24px; }
+
   /* ===== SCROLL REVEAL ===== */
   .reveal {
     opacity: 0;
@@ -318,6 +334,7 @@
   }
   .final h2 { font-family: var(--serif); font-size: clamp(26px, 4.8vw, 35px); text-wrap: balance; margin: 0 0 20px; }
   .final p { margin: 0 auto 34px; color: var(--text-dim); font-size: 16.5px; }
+  .final strong { color: var(--gold-emph); font-weight: 700; }
   .listen-note { margin: -14px 0 30px; font-size: 15px; color: var(--text-dim); }
   .listen-note a { color: var(--gold-emph); text-decoration: underline; text-underline-offset: 3px; }
 
@@ -355,6 +372,7 @@
 
   <div class="hero">
     <div class="wrap">
+      <div class="soldout-wrap"><span class="soldout-banner">満席になりました</span></div>
       <div class="hero-eyebrow"><span class="eyebrow">視える潜在意識コーチ まきろん — チャネリング＆ヒーリング講座</span></div>
       <h1 class="headline">「サイキック」は才能ではなく、<br><em>鍛錬と自己信頼</em>だ。</h1>
       <canvas id="wave" width="1200" height="120" aria-hidden="true"></canvas>
@@ -487,7 +505,7 @@
           <div class="panel-row"><span class="k">参加費</span><span class="v price">¥80,000<span class="unit">税込・全4回</span></span></div>
           <div class="panel-row"><span class="k">お支払い</span><span class="v">分割払いをご希望の方は、お気軽にお問い合わせください</span></div>
           <div class="panel-row"><span class="k">含まれるもの</span><span class="v">対面2日間・Zoom2回・1ヶ月間限定LINEグループ（質疑応答可）・ワークシート</span></div>
-          <div class="panel-row"><span class="k">募集</span><span class="v">定員に達し次第、締切</span></div>
+          <div class="panel-row"><span class="k">募集</span><span class="v">満席になりました（受付終了）</span></div>
         </div>
       </div>
       <div class="capacity-note reveal-target">
@@ -527,10 +545,10 @@
 
   <div class="final">
     <div class="wrap">
-      <h2 class="reveal-target">本気で、サイキック能力を開いていきたい方へ</h2>
-      <p class="reveal-target" style="--rd:.06s">定員5名、少人数だからこそできる講座です。また、今後同様のワークショップを開催するか未定となります。本気の方は、下記よりお申し込みください。</p>
-      <p class="listen-note reveal-target" style="--rd:.09s">申し込み前に、<a href="https://stand.fm/episodes/6a487ab638dcc11dcaf63382" target="_blank" rel="noopener">こちらの音声</a>をお聞きください。</p>
-      <a class="btn-primary reveal-target" style="--rd:.12s" href="https://ws.formzu.net/fgen/S805951984/">申し込みフォームへ進む</a>
+      <div class="soldout-wrap reveal-target"><span class="soldout-banner">満席になりました</span></div>
+      <h2 class="reveal-target">たくさんのお申し込み、ありがとうございました。</h2>
+      <p class="reveal-target" style="--rd:.06s">おかげさまで、定員5名は満席となりました。心より感謝申し上げます。</p>
+      <p class="reveal-target" style="--rd:.09s">今後の受講をご希望の方は、<strong>LINEにてアクションいただけますと、来期の開催を検討いたします。</strong>ぜひLINE公式にご登録のうえ、お気持ちをお寄せください。</p>
     </div>
   </div>
 
