@@ -40,7 +40,7 @@
   *{box-sizing:border-box}
   body{margin:0}
   .page{background:var(--ground);color:var(--ink);font-family:var(--sans);
-    line-height:1.95;font-size:16px;letter-spacing:.01em;overflow-x:hidden;
+    line-height:1.98;font-size:17.5px;letter-spacing:.01em;overflow-x:hidden;
     -webkit-font-smoothing:antialiased;transition:background .5s,color .5s}
   .wrap{width:min(1080px,90vw);margin-inline:auto}
   .col{width:min(680px,90vw);margin-inline:auto}
@@ -147,7 +147,7 @@
   .hero .col{position:relative;z-index:2;text-align:left}
   .hero h1{font-size:clamp(2rem,5.6vw,4rem);line-height:1.32;margin:.1em 0 .55em}
   .hero h1 .rose{color:var(--rose)}
-  .hero .lede{font-size:clamp(1.02rem,2.2vw,1.2rem);max-width:34em;margin-bottom:2.2em}
+  .hero .lede{font-size:clamp(1.1rem,2.3vw,1.26rem);max-width:34em;margin-bottom:2.2em}
   .hero .sig{font-family:var(--serif);color:var(--ink-soft);font-size:.95rem;margin-top:2.6em}
 
   .cta-row{display:flex;flex-wrap:wrap;gap:14px 18px;align-items:center}
@@ -251,14 +251,15 @@
   }
 
   /* readability + mobile tuning */
-  .goal p,.pain p,.voice p,.step .body p,.bcard p,.faq .a{font-size:1.02rem}
-  .spec dd{font-size:1.05rem}
-  .voice .who,.stat span,.final .note,.step .body .list li{font-size:.86rem}
-  .eyebrow{font-size:.78rem}
-  .nav-links a{font-size:.9rem}
-  .faq summary{font-size:1.08rem}
+  .goal p,.pain p,.voice p,.step .body p,.bcard p,.faq .a,.reco li{font-size:1.12rem;line-height:1.9}
+  .spec dd{font-size:1.14rem}
+  .shift-card li{font-size:1.08rem}
+  .voice .who,.stat span,.final .note,.step .body .list li{font-size:.94rem}
+  .eyebrow{font-size:.82rem}
+  .nav-links a{font-size:.94rem}
+  .faq summary{font-size:1.16rem}
   @media (max-width:560px){
-    .page{font-size:17px;line-height:2}
+    .page{font-size:18.5px;line-height:2.05}
     .band{padding:3.6rem 0}
     .sec-head{margin-bottom:2.3rem}
     .sec-head h2{font-size:clamp(1.55rem,6.2vw,2rem)}
@@ -266,12 +267,12 @@
     .nav-in{gap:.5rem;height:56px}
     .brand{font-size:.88rem}
     .nav .btn{padding:.5em 1em;font-size:.8rem}
-    .goal p,.pain p,.voice p,.step .body p,.bcard p,.faq .a,.spec dd{font-size:1.05rem}
+    .goal p,.pain p,.voice p,.step .body p,.bcard p,.faq .a,.spec dd,.reco li,.shift-card li{font-size:1.16rem}
     .reco{padding:1.6rem 1.35rem}
     .reco li{padding-left:2.3em}
     .shift-card{padding:1.6rem 1.4rem}
     .spec .row{padding:1rem 1.2rem}
-    .final .price{font-size:1.05rem}
+    .final .price{font-size:1.12rem}
     .btn{padding:.9em 1.8em}
   }
 </style>
@@ -316,9 +317,7 @@
   <section class="band" id="concept">
     <div class="col" style="text-align:center">
       <p class="eyebrow" style="text-align:center">この講座の大前提</p>
-      <p class="muted reveal">どんなに正しい戦略を立てても、頑張って行動しても、
-        動機がズレていればビジネスは動きません。
-        思考（顕在意識）だけでは変わらない——だからこの講座は、ビジネスにおける
+      <p class="muted reveal">この講座は、ビジネスにおける
         あなたの<span class="em">本心・軸・ビジョン</span>という“周波数”そのものを整えていきます。</p>
       <div class="law reveal">
         <span class="tag">Law</span>
