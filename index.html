@@ -311,6 +311,29 @@
   .session h4 { font-family: var(--serif); font-size: 19px; font-weight: 600; margin: 0 0 8px; line-height: 1.6; }
   .session p { font-size: 16px; color: var(--text-dim); max-width: 54ch; }
 
+  /* ===== VOICE (testimonials) ===== */
+  .voice-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .voice-card {
+    position: relative;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 22px 24px;
+    background: rgba(201,165,78,0.04);
+  }
+  .voice-card::before {
+    content: "\201C";
+    font-family: var(--serif);
+    font-size: 46px;
+    line-height: 1;
+    color: var(--gold);
+    opacity: 0.35;
+    position: absolute;
+    top: 10px;
+    right: 18px;
+  }
+  .voice-card .quote { font-family: var(--serif); font-size: 15.5px; line-height: 1.95; margin: 0 0 14px; }
+  .voice-card .who { font-family: var(--mono); font-size: 12px; letter-spacing: 0.08em; color: var(--gold); }
+
   /* ===== OVERVIEW PANEL ===== */
   .panel { border: 1px solid var(--border); padding: 4px; }
   .panel-inner { display: grid; grid-template-columns: 1fr; }
@@ -358,6 +381,7 @@
 
   @media (max-width: 560px) {
     .lp { font-size: 18px; }
+    .voice-grid { grid-template-columns: 1fr; }
     .wrap { padding: 0 20px; }
     .hero { padding: 72px 0 60px; }
     section { padding: 56px 0; }
@@ -500,6 +524,31 @@
       </div>
 
       <p class="curriculum-intro reveal-target" style="margin-top: 30px;">対面初日からセッション04までの期間、1ヶ月間限定のLINEグループで質疑応答が可能です。</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <span class="eyebrow">VOICE</span>
+      <h2 class="section-title reveal-target">第一期 参加者の声</h2>
+      <div class="voice-grid">
+        <div class="voice-card reveal-target" style="--rd:0s">
+          <p class="quote">講座は、本当に濃い時間で学び、気づきがたくさんありました。さらに打ち上げは、追加の特別講座のようでしたし、本当にありがたかったです。</p>
+          <div class="who">— のむのむ さん</div>
+        </div>
+        <div class="voice-card reveal-target" style="--rd:.08s">
+          <p class="quote">講座の内容が、とてもレアで深くて、参加して本当に良かったです。自分の今を知り、これからどうしていったらよいのかがわかったことは、大きいです。</p>
+          <div class="who">— すみえ さん</div>
+        </div>
+        <div class="voice-card reveal-target" style="--rd:.16s">
+          <p class="quote">本当に気づきだらけの2daysでした！今回、本気でコミットすると決めて来たので、まきさんやみんなとめっちゃ共鳴して、たくさんの事を学べました！練習がんばります☆</p>
+          <div class="who">— ミミちゃん さん</div>
+        </div>
+        <div class="voice-card reveal-target" style="--rd:.24s">
+          <p class="quote">皆さんとも素敵なご縁で繋がることができて、いろんなお話をたくさん聞かせていただけて、とっても楽しく嬉しい2日間でした。本当にありがとうございました。</p>
+          <div class="who">— JURI さん</div>
+        </div>
+      </div>
     </div>
   </section>
 
