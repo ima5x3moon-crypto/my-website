@@ -161,6 +161,29 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:28px;justify-content:space-between;
   section.block{padding-block:48px}
   th{width:6.5em}
 }
+/* 携帯用：下部に固定の申し込みバー */
+.sticky-cta{display:none}
+@media (max-width:640px){
+  body{font-size:15.5px;line-height:1.9}
+  .btn{width:100%;padding:17px 20px;font-size:16px}
+  .dates{flex-direction:column}
+  .date{width:100%}
+  .hero h1{font-size:30px}
+  .prog{padding:24px 20px}
+  .prog h3{font-size:22px}
+  .flow li{grid-template-columns:1fr;gap:4px;padding-left:26px;padding-bottom:26px}
+  .flow li::before{left:4px;top:12px}
+  .flow li::after{left:0;top:8px}
+  .flow time{text-align:left;font-size:20px;padding-right:0}
+  .flow .body{padding-left:0}
+  th,td{padding:14px 8px}
+  th{width:5.8em;white-space:normal}
+  footer .wrap{flex-direction:column;gap:20px}
+  .sticky-cta{display:block;position:fixed;left:0;right:0;bottom:0;z-index:20;padding:10px 16px calc(10px + env(safe-area-inset-bottom, 0px));background:color-mix(in srgb, var(--night) 94%, transparent);backdrop-filter:blur(6px);border-top:1px solid rgba(207,174,104,.4);transform:translateY(110%);transition:transform .3s ease}
+  .sticky-cta.show{transform:none}
+  .sticky-cta .btn{padding:14px 20px}
+  body{padding-bottom:calc(78px + env(safe-area-inset-bottom, 0px))}
+}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
 
@@ -326,6 +349,8 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:28px;justify-content:space-between;
   </div>
 </footer>
 
+<div class="sticky-cta" id="stickyCta"><a class="btn" href="https://ws.formzu.net/sfgen/S80778748/" target="_blank" rel="noopener">お申し込みはこちら <span class="arr">→</span></a></div>
+
 <script>
 document.getElementById('copyBtn').addEventListener('click', function(){
   var btn=this, text=document.getElementById('mail').textContent;
@@ -333,4 +358,12 @@ document.getElementById('copyBtn').addEventListener('click', function(){
   function fallback(){var r=document.createRange();r.selectNodeContents(document.getElementById('mail'));var s=getSelection();s.removeAllRanges();s.addRange(r);btn.textContent='選択しました'}
   try{navigator.clipboard.writeText(text).then(done,fallback)}catch(e){fallback()}
 });
+(function(){
+  var bar=document.getElementById('stickyCta'),hero=document.querySelector('.hero'),apply=document.getElementById('apply');
+  if(!('IntersectionObserver' in window)){bar.classList.add('show');return}
+  var heroVis=true,applyVis=false;
+  function upd(){bar.classList.toggle('show',!heroVis&&!applyVis)}
+  new IntersectionObserver(function(e){heroVis=e[0].isIntersecting;upd()}).observe(hero);
+  new IntersectionObserver(function(e){applyVis=e[0].isIntersecting;upd()}).observe(apply);
+})();
 </script>
