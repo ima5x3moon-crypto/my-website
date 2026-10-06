@@ -1,0 +1,336 @@
+<!doctype html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>東京対面セッション＆神仏リトリート</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@500;700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Cormorant+Garamond:wght@500;600&display=swap">
+<style>
+/* Layout: 縦書きの見出しが立つ参道のような一本道。紺の夜空に朱と金、白鼠の地。 */
+:root{
+  --bg:#EEEDF1;          /* 白鼠 */
+  --surface:#F8F7FA;
+  --ink:#1D2140;         /* 濃紺 */
+  --ink-soft:#4A4E68;
+  --line:#CFCDD8;
+  --shu:#B9402A;         /* 朱 */
+  --kin:#9A7A3A;         /* 金 */
+  --night:#1D2140;
+  --on-night:#EDEBF3;
+  --f-display:"Shippori Mincho B1","Hiragino Mincho ProN","Yu Mincho",serif;
+  --f-body:"Zen Kaku Gothic New","Hiragino Sans","Yu Gothic",sans-serif;
+  --f-num:"Cormorant Garamond","Times New Roman",serif;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#13152A;--surface:#1B1E38;--ink:#E9E7F0;--ink-soft:#A9AAC0;--line:#33365A;
+    --shu:#E0694F;--kin:#CFAE68;--night:#0C0E1F;--on-night:#EDEBF3;color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#13152A;--surface:#1B1E38;--ink:#E9E7F0;--ink-soft:#A9AAC0;--line:#33365A;
+  --shu:#E0694F;--kin:#CFAE68;--night:#0C0E1F;--on-night:#EDEBF3;color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.95;letter-spacing:.03em;margin:0}
+a{color:inherit}
+.wrap{max-width:880px;margin:0 auto;padding-inline:20px}
+h1,h2,h3{font-family:var(--f-display);font-weight:700;text-wrap:balance;margin:0;line-height:1.5}
+p{margin:0}
+.num{font-family:var(--f-num);font-variant-numeric:tabular-nums;letter-spacing:.02em}
+:focus-visible{outline:2px solid var(--shu);outline-offset:3px}
+
+/* ヒーロー */
+.hero{background:var(--night);color:var(--on-night);position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background:
+  radial-gradient(ellipse 60% 50% at 85% 10%, rgba(207,174,104,.18), transparent 70%),
+  radial-gradient(ellipse 50% 60% at 0% 100%, rgba(185,64,42,.22), transparent 70%);pointer-events:none}
+.hero .wrap{position:relative;display:grid;grid-template-columns:1fr auto;gap:28px;padding-block:56px 64px;align-items:start}
+.hero-main{min-width:0;display:flex;flex-direction:column;gap:22px}
+.eyebrow{font-size:13px;letter-spacing:.24em;color:#CFAE68}
+.hero h1{font-size:clamp(28px,5.4vw,46px);font-weight:800;line-height:1.4}
+.hero h1 .amp{color:#E0694F;font-weight:500}
+.hero-lead{color:#C9C8D8;max-width:32em}
+.dates{display:flex;flex-wrap:wrap;gap:12px}
+.date{border:1px solid rgba(207,174,104,.45);padding:12px 18px;display:flex;flex-direction:column;gap:2px;min-width:0}
+.date .d{font-family:var(--f-num);font-size:30px;line-height:1.1;color:#fff}
+.date .d small{font-size:15px;margin-left:4px;color:#CFAE68;font-family:var(--f-body)}
+.date .w{font-size:13px;color:#C9C8D8}
+.tate{writing-mode:vertical-rl;font-family:var(--f-display);font-size:clamp(20px,3.2vw,30px);font-weight:500;letter-spacing:.32em;line-height:1.9;color:#EDEBF3;border-right:1px solid rgba(207,174,104,.5);padding-right:14px;height:fit-content}
+.tate em{font-style:normal;color:#CFAE68}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:var(--shu);color:#fff;text-decoration:none;font-weight:700;padding:16px 30px;letter-spacing:.12em;border-radius:2px;transition:transform .2s ease,background .2s ease;width:fit-content;max-width:100%}
+.btn:hover{transform:translateY(-2px)}
+.btn .arr{font-family:var(--f-num);font-size:20px;line-height:1}
+
+/* セクション共通 */
+section.block{padding-block:64px;border-bottom:1px solid var(--line)}
+.sec-head{display:flex;align-items:baseline;gap:14px;margin-bottom:28px}
+.sec-head .mark{width:10px;height:10px;background:var(--shu);transform:rotate(45deg);flex:none;translate:0 -4px}
+.sec-head h2{font-size:clamp(22px,3.6vw,30px)}
+.prose{display:flex;flex-direction:column;gap:18px;max-width:38em}
+.prose strong{background:linear-gradient(transparent 62%, color-mix(in srgb, var(--kin) 28%, transparent) 62%);font-weight:700}
+
+/* 二つのプログラム */
+.programs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.prog{background:var(--surface);border:1px solid var(--line);padding:28px 26px;display:flex;flex-direction:column;gap:16px;min-width:0}
+.prog .day{font-size:13px;letter-spacing:.2em;color:var(--kin);font-weight:700}
+.prog h3{font-size:24px}
+.prog .desc{color:var(--ink-soft);font-size:15px}
+.prog dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:8px 18px;border-top:1px solid var(--line);padding-top:16px;margin-top:auto}
+.prog dt{font-size:13px;color:var(--ink-soft)}
+.prog dd{margin:0;font-weight:500}
+.price{font-family:var(--f-num);font-size:30px;line-height:1.1;color:var(--shu)}
+.price small{font-family:var(--f-body);font-size:14px;color:var(--ink-soft);margin-left:2px}
+
+/* お願い */
+.note{border-left:2px solid var(--kin);padding:4px 0 4px 18px;color:var(--ink-soft);font-size:15px;max-width:38em}
+
+/* 当日の流れ */
+.flow{list-style:none;margin:0;padding:0;position:relative;display:flex;flex-direction:column;gap:0}
+.flow li{display:grid;grid-template-columns:84px 1fr;gap:20px;padding-bottom:30px;position:relative}
+.flow li::before{content:"";position:absolute;left:96px;top:14px;bottom:-14px;width:1px;background:var(--line)}
+.flow li:last-child::before{display:none}
+.flow li::after{content:"";position:absolute;left:92px;top:10px;width:9px;height:9px;border-radius:50%;background:var(--bg);border:2px solid var(--shu)}
+.flow time{font-family:var(--f-num);font-size:24px;line-height:1.2;text-align:right;padding-right:6px;color:var(--ink)}
+.flow .body{padding-left:22px;min-width:0;display:flex;flex-direction:column;gap:6px}
+.flow h3{font-size:18px}
+.flow p{color:var(--ink-soft);font-size:15px}
+.places{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:30px}
+.place{font-family:var(--f-display);font-weight:700;font-size:17px;padding:8px 18px;border:1px solid var(--shu);color:var(--shu)}
+
+/* プライベートリトリート：夜の帯で際立たせる */
+.private-band{background:var(--night);color:var(--on-night);padding-block:72px;position:relative;overflow:hidden}
+.private-band::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 55% 45% at 100% 0%, rgba(207,174,104,.22), transparent 70%),radial-gradient(ellipse 45% 50% at 0% 100%, rgba(185,64,42,.18), transparent 70%);pointer-events:none}
+.private-band .wrap{position:relative;display:flex;flex-direction:column;gap:32px}
+.pb-head{display:flex;flex-direction:column;align-items:flex-start;gap:14px;border-left:2px solid #CFAE68;padding-left:20px}
+.pb-eyebrow{font-size:13px;letter-spacing:.24em;color:#CFAE68}
+.pb-head h2{font-size:clamp(28px,5vw,42px);font-weight:800;line-height:1.4;color:#fff}
+.limit{font-family:var(--f-display);font-weight:800;font-size:18px;color:#fff;background:#B9402A;padding:8px 18px;letter-spacing:.1em}
+.limit .num{font-size:28px;margin:0 2px}
+.pb-story{display:flex;flex-direction:column;gap:16px;max-width:38em;color:#DCDAE6}
+.pb-story strong{color:#fff;background:linear-gradient(transparent 62%, rgba(207,174,104,.4) 62%)}
+.pb-note{font-size:13px;color:#CFAE68}
+.private{border:1px solid rgba(207,174,104,.55);background:rgba(255,255,255,.04);padding:28px 26px;display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:28px}
+.private-col{display:flex;flex-direction:column;gap:14px;min-width:0}
+.private-col h3{font-size:18px;color:#fff}
+.private .for li::before{background:#CFAE68}
+.private-dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:10px 18px;align-content:start}
+.private-dl dt{font-size:13px;color:#A9AAC0}
+.private-dl dd{margin:0;font-weight:500}
+.private .price{color:#E0694F}
+.private .tiny{font-size:13px;color:#A9AAC0}
+@media (max-width:640px){.private-band{padding-block:52px}.private{grid-template-columns:1fr;padding:22px 18px}}
+
+/* おすすめ */
+.for{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px;max-width:38em}
+.for li{display:flex;gap:14px;align-items:baseline}
+.for li::before{content:"";width:7px;height:7px;background:var(--kin);transform:rotate(45deg);flex:none;translate:0 -3px}
+
+/* 概要表 */
+.table-wrap{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:15px}
+th,td{text-align:left;padding:16px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{width:9em;font-weight:500;color:var(--ink-soft);white-space:nowrap}
+td .num{font-size:19px}
+
+/* 申し込み */
+.apply{background:var(--night);color:var(--on-night);padding-block:72px;text-align:center}
+.apply .wrap{display:flex;flex-direction:column;align-items:center;gap:22px}
+.apply h2{font-size:clamp(22px,3.8vw,32px)}
+.apply p{color:#C9C8D8}
+.apply .small{font-size:13px;color:#A9AAC0}
+
+footer{padding-block:44px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:28px;justify-content:space-between;font-size:14px;color:var(--ink-soft)}
+.org{font-family:var(--f-display);font-size:20px;font-weight:700;color:var(--ink)}
+.mail{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.mail code{font-family:var(--f-body);font-size:15px;color:var(--ink);user-select:all;word-break:break-all}
+.copy{font:inherit;font-size:12px;border:1px solid var(--line);background:var(--surface);color:var(--ink);padding:4px 12px;cursor:pointer;border-radius:2px}
+
+@media (max-width:640px){
+  .hero .wrap{grid-template-columns:1fr;padding-block:40px 48px}
+  .tate{writing-mode:horizontal-tb;border-right:0;border-left:2px solid rgba(207,174,104,.6);padding:0 0 0 12px;letter-spacing:.12em;font-size:18px;order:-1}
+  .programs{grid-template-columns:1fr}
+  .flow li{grid-template-columns:62px 1fr;gap:14px}
+  .flow time{font-size:20px}
+  .flow li::before{left:72px}
+  .flow li::after{left:68px}
+  .flow .body{padding-left:18px}
+  section.block{padding-block:48px}
+  th{width:6.5em}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="hero-main">
+      <p class="eyebrow">TOKYO 対面セッション会 ／ 神仏リトリート</p>
+      <h1>東京対面セッション<span class="amp">＆</span><br>神仏リトリート</h1>
+      <p class="hero-lead">年末に向けて、「視えない世界」からのメッセージと、潜在意識・エネルギーの調整を。普段は遠隔のみのセッションを、今回は直接お会いしてお届けします。</p>
+      <div class="dates">
+        <div class="date"><span class="d num">11.21<small>土</small></span><span class="w">個人セッション会</span></div>
+        <div class="date"><span class="d num">11.22<small>日</small></span><span class="w">神仏リトリート　深川不動尊・富岡八幡宮</span></div>
+      </div>
+      <a class="btn" href="https://ws.formzu.net/sfgen/S80778748/" target="_blank" rel="noopener">お申し込みはこちら <span class="arr">→</span></a>
+    </div>
+    <p class="tate">二〇二七年の流れに、<br><em>いま</em>から乗っていく。</p>
+  </div>
+</header>
+
+<main>
+  <section class="block">
+    <div class="wrap">
+      <div class="sec-head"><span class="mark"></span><h2>ごあいさつ</h2></div>
+      <div class="prose">
+        <p>皆さまこんにちは！まきです。</p>
+        <p>この度、2026年11月21日（土）・22日（日）に、東京セッション会＆神仏リトリートを行います。セッション会は21日、神仏リトリートは22日に実施いたします。</p>
+        <p style="font-size:14px;color:var(--ink-soft)">昨今、関東地方で大雨による災害があり、その土地のエネルギーに対してお力添えできればと思い、東京出張を決めました。</p>
+        <p>また11月の後半は、<strong>2027年に向けた「視えない世界」の準備</strong>が進む時期です。2027年を素晴らしい流れに乗って進んでいきたい方は、ぜひこの機会にお会いしましょう。</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="program">
+    <div class="wrap">
+      <div class="sec-head"><span class="mark"></span><h2>2日間のプログラム</h2></div>
+      <div class="programs">
+        <article class="prog">
+          <span class="day">DAY 1 ／ 11月21日（土）</span>
+          <h3>対面個人セッション</h3>
+          <p class="desc">霊視＆潜在意識＆エネルギー調整コンサル。お悩み・聞きたいこと・叶えたい願望を伺い、視えない世界からのメッセージ、潜在意識の紐解き、エネルギー調整を行います。</p>
+          <dl>
+            <dt>時間</dt><dd class="num">11:00 ／ 13:00 ／ 15:00</dd>
+            <dt>所要</dt><dd>90分</dd>
+            <dt>参加費</dt><dd><span class="price">30,000<small>円</small></span><br><span style="font-size:13px;color:var(--ink-soft)">調整＆リーディング代含む</span></dd>
+          </dl>
+        </article>
+        <article class="prog">
+          <span class="day">DAY 2 ／ 11月22日（日）</span>
+          <h3>神仏リトリート</h3>
+          <p class="desc">深川不動尊・富岡八幡宮へ少人数で参拝。それぞれの神仏から受け取ったことをシェアし、皆さまと一緒に「場」と交流するエネルギーワークを行います。</p>
+          <dl>
+            <dt>時間</dt><dd class="num">10:00 – 14:00</dd>
+            <dt>集合</dt><dd>深川不動尊入口 深川龍神前</dd>
+            <dt>参加費</dt><dd><span class="price">35,000<small>円</small></span><br><span style="font-size:13px;color:var(--ink-soft)">遠征費・調整＆リーディング代含む</span></dd>
+          </dl>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="wrap">
+      <div class="sec-head"><span class="mark"></span><h2>個人セッションについて</h2></div>
+      <div class="prose">
+        <p>当方のセッションは<strong>「霊視＆潜在意識＆エネルギー調整コンサル」</strong>です。あなたの現在のお悩みや聞きたいこと、叶えたい願望をお伺いし、それについての「視えない世界からのメッセージ」、願望実現を妨げる潜在意識の紐解き、エネルギー調整を行います。</p>
+        <p>鑑定歴は<span class="num" style="font-size:20px">6,500</span>件。普段のセッションは遠隔でしか行っていないため、対面は貴重な機会です。ぜひ受け取っていただけたらと思います。</p>
+        <p class="note">個人セッションでの私の繋がり先は「あなたのハイヤーセルフ・魂・エネルギー」です。神仏からのメッセージはリトリートでお聞きください。<br>また「世界は自分が作っている」という前提の内容のため、単なる占いや、こちらに依存的な内容、人生の責任を委ねるご相談はご遠慮ください。</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="flow">
+    <div class="wrap">
+      <div class="sec-head"><span class="mark"></span><h2>神仏リトリート 当日の流れ</h2></div>
+      <div class="places"><span class="place">深川不動尊</span><span class="place">富岡八幡宮</span></div>
+      <ol class="flow">
+        <li><time class="num">10:00</time><div class="body"><h3>深川不動尊 入口・深川龍神前で合流</h3><p>合流次第スタート。受け取ったメッセージをお話ししながら、全員で「場」と交流する参拝を行います。</p></div></li>
+        <li><time class="num">11:30</time><div class="body"><h3>富岡八幡宮へ</h3><p>隣接する富岡八幡宮へ参拝します。</p></div></li>
+        <li><time class="num">12:30</time><div class="body"><h3>周辺でランチ＆プチセッション</h3><p>参加者の方との交流、質疑応答、プチリーディングを行います。集まっていただいた皆さまとの対話を楽しみにしています。</p></div></li>
+        <li><time class="num">14:00</time><div class="body"><h3>終了</h3><p>雨天時も決行します。</p></div></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="wrap">
+      <div class="sec-head"><span class="mark"></span><h2>このような方におすすめです</h2></div>
+      <ul class="for">
+        <li>深川不動尊や富岡八幡宮が大好きな方</li>
+        <li>神仏との交流を楽しみたい方</li>
+        <li>共に交流しつつ、リアルに私と会いたい方</li>
+        <li>より幸せな未来を受け取っていくと決めている方</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="private-band" id="private">
+    <div class="wrap">
+      <div class="pb-head">
+        <p class="pb-eyebrow">SPECIAL ／ 今回のみの特別企画</p>
+        <h2>11月限定<br>プライベートリトリート</h2>
+        <span class="limit">限定<span class="num">2</span>名</span>
+      </div>
+      <div class="pb-story">
+        <p>これまで、クライアント様から<strong>「私が好きな神仏に直接来てほしい」</strong>というお話を伺うことがありました。</p>
+        <p>そのため、今回のみ特別に少人数にて、プライベートリトリートを企画いたしました。</p>
+        <p>「自分が好きな神仏の場と交流したい」「メッセージが欲しい」という方は、この機会にお申し込みください。</p>
+        <p class="pb-note">※今後実施するかは未定です<br>※年内はこの機会で終了</p>
+      </div>
+      <div class="private">
+        <div class="private-col">
+          <h3>内容</h3>
+          <ul class="for">
+            <li>ご希望の神仏の場に一緒に行き、メッセージをお伝えします</li>
+            <li>あなた個人に特化したワークとエネルギー調整</li>
+            <li>プライベートプチセッション</li>
+          </ul>
+        </div>
+        <dl class="private-dl">
+          <dt>日時</dt><dd>11月中で、ご希望に合わせて調整します</dd>
+          <dt>時間</dt><dd>3時間</dd>
+          <dt>料金</dt><dd><span class="price">50,000<small>円</small></span><br><span class="tiny">＋現地までの往復交通費</span></dd>
+        </dl>
+      </div>
+      <a class="btn" href="https://ws.formzu.net/sfgen/S80778748/" target="_blank" rel="noopener">プライベートリトリートを申し込む <span class="arr">→</span></a>
+    </div>
+  </section>
+
+
+  <section class="block" id="outline">
+    <div class="wrap">
+      <div class="sec-head"><span class="mark"></span><h2>開催概要</h2></div>
+      <div class="table-wrap">
+        <table>
+          <tr><th>日時</th><td><span class="num">2026</span>年<span class="num">11</span>月<span class="num">21</span>日（土）・<span class="num">22</span>日（日）</td></tr>
+          <tr><th>個人セッション</th><td>11月21日（土）<br><span class="num">11:00</span> ／ <span class="num">13:00</span> ／ <span class="num">15:00</span>（各90分）<br>参加費 <span class="num">30,000</span>円（調整＆リーディング代含む）</td></tr>
+          <tr><th>神仏リトリート</th><td>11月22日（日）<span class="num">10:00</span>〜<span class="num">14:00</span><br>深川不動尊・富岡八幡宮<br>参加費 <span class="num">35,000</span>円（遠征費・調整＆リーディング代含む）</td></tr>
+          <tr><th>プライベート<br>リトリート</th><td>11月中・日時はご希望に合わせて調整（3時間）<br>参加費 <span class="num">50,000</span>円＋現地までの往復交通費<br>限定<span class="num">2</span>名</td></tr>
+          <tr><th>定員</th><td>少人数でじっくりと交流させていただきます</td></tr>
+          <tr><th>天候</th><td>雨天決行</td></tr>
+          <tr><th>注意事項</th><td>効果には個人差があります</td></tr>
+        </table>
+      </div>
+    </div>
+  </section>
+</main>
+
+<section class="apply" id="apply">
+  <div class="wrap">
+    <h2>「場」と共鳴し、交流したい方へ。</h2>
+    <p>心よりお待ちしています。</p>
+    <a class="btn" href="https://ws.formzu.net/sfgen/S80778748/" target="_blank" rel="noopener">お申し込みフォームへ <span class="arr">→</span></a>
+    <p class="small">外部の申し込みフォーム（フォームズ）が開きます</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div><p style="font-size:12px;letter-spacing:.2em">主催</p><p class="org">だいろくのまき</p></div>
+    <div><p style="font-size:12px;letter-spacing:.2em">お問い合わせ</p>
+      <div class="mail"><code id="mail">neoearth88@gmail.com</code><button class="copy" id="copyBtn" type="button">コピー</button></div>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.getElementById('copyBtn').addEventListener('click', function(){
+  var btn=this, text=document.getElementById('mail').textContent;
+  function done(){btn.textContent='コピーしました';setTimeout(function(){btn.textContent='コピー'},1800)}
+  function fallback(){var r=document.createRange();r.selectNodeContents(document.getElementById('mail'));var s=getSelection();s.removeAllRanges();s.addRange(r);btn.textContent='選択しました'}
+  try{navigator.clipboard.writeText(text).then(done,fallback)}catch(e){fallback()}
+});
+</script>
