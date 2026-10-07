@@ -172,6 +172,13 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:28px;justify-content:space-between;
   .sticky-cta .btn{padding:14px 20px}
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+/* 空き状況 */
+.full,.left{display:inline-block;font-family:var(--f-body);font-size:13px;font-weight:700;line-height:1.5;padding:2px 10px;border-radius:999px;letter-spacing:.04em;vertical-align:middle;white-space:nowrap}
+.full{background:var(--tint);color:var(--ink-soft);border:1px solid var(--line)}
+.left{background:var(--shu);color:var(--on-shu)}
+.date .left{align-self:flex-start;margin-top:6px}
+.left-txt{color:var(--shu)}
+s.num{color:var(--ink-soft);text-decoration-thickness:2px}
 </style>
 
 <header class="hero">
@@ -181,8 +188,8 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:28px;justify-content:space-between;
       <h1>東京対面セッション<span class="amp">＆</span><br>神仏リトリート</h1>
       <p class="hero-lead">年末に向けて、「視えない世界」からのメッセージと、潜在意識・エネルギーの調整を。普段は遠隔のみのセッションを、今回は直接お会いしてお届けします。</p>
       <div class="dates">
-        <div class="date"><span class="d num">11.21<small>土</small></span><span class="w">個人セッション会</span></div>
-        <div class="date"><span class="d num">11.22<small>日</small></span><span class="w">神仏リトリート　深川不動尊・富岡八幡宮</span></div>
+        <div class="date"><span class="d num">11.21<small>土</small></span><span class="w">個人セッション会　<span class="full">15:00は満席</span></span></div>
+        <div class="date"><span class="d num">11.22<small>日</small></span><span class="w">神仏リトリート　深川不動尊・富岡八幡宮</span><span class="left">残り1名</span></div>
       </div>
       <a class="btn" href="https://ws.formzu.net/fgen/S805951984/" target="_blank" rel="noopener">お申し込みはこちら <span class="arr">→</span></a>
     </div>
@@ -212,14 +219,14 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:28px;justify-content:space-between;
           <h3>対面個人セッション</h3>
           <p class="desc">霊視＆潜在意識＆エネルギー調整コンサル。お悩み・聞きたいこと・叶えたい願望を伺い、視えない世界からのメッセージ、潜在意識の紐解き、エネルギー調整を行います。</p>
           <dl>
-            <dt>時間</dt><dd class="num">11:00 ／ 13:00 ／ 15:00</dd>
+            <dt>時間</dt><dd><span class="num">11:00</span> ／ <span class="num">13:00</span> ／ <s class="num">15:00</s> <span class="full">15:00 満席</span></dd>
             <dt>所要</dt><dd>90分</dd>
             <dt>参加費</dt><dd><span class="price">30,000<small>円</small></span><br><span class="tiny">調整＆リーディング代含む</span></dd>
           </dl>
         </article>
         <article class="prog">
           <span class="day">DAY 2 ／ 11月22日（日）</span>
-          <h3>神仏リトリート</h3>
+          <h3>神仏リトリート <span class="left">残り1名</span></h3>
           <p class="desc">深川不動尊・富岡八幡宮へ少人数で参拝。それぞれの神仏から受け取ったことをシェアし、皆さまと一緒に「場」と交流するエネルギーワークを行います。</p>
           <dl>
             <dt>時間</dt><dd class="num">10:00 – 14:00</dd>
@@ -306,10 +313,10 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:28px;justify-content:space-between;
       <div class="table-wrap">
         <table>
           <tr><th>日時</th><td><span class="num">2026</span>年<span class="num">11</span>月<span class="num">21</span>日（土）・<span class="num">22</span>日（日）</td></tr>
-          <tr><th>個人セッション</th><td>11月21日（土）<br><span class="num">11:00</span> ／ <span class="num">13:00</span> ／ <span class="num">15:00</span>（各90分）<br>参加費 <span class="num">30,000</span>円（調整＆リーディング代含む）</td></tr>
+          <tr><th>個人セッション</th><td>11月21日（土）<br><span class="num">11:00</span> ／ <span class="num">13:00</span> ／ <s class="num">15:00</s>（各90分）<br><span class="full">15:00の枠は満席です</span><br>参加費 <span class="num">30,000</span>円（調整＆リーディング代含む）</td></tr>
           <tr><th>神仏リトリート</th><td>11月22日（日）<span class="num">10:00</span>〜<span class="num">14:00</span><br>深川不動尊・富岡八幡宮<br>参加費 <span class="num">35,000</span>円（遠征費・調整＆リーディング代含む）</td></tr>
           <tr><th>プライベート<br>リトリート</th><td>11月中・日時はご希望に合わせて調整（3時間）<br>参加費 <span class="num">50,000</span>円＋現地までの往復交通費<br>限定<span class="num">2</span>名</td></tr>
-          <tr><th>定員</th><td>少人数でじっくりと交流させていただきます</td></tr>
+          <tr><th>定員</th><td>少人数でじっくりと交流させていただきます<br>神仏リトリートは<strong class="left-txt">残り1名</strong></td></tr>
           <tr><th>天候</th><td>雨天決行</td></tr>
           <tr><th>注意事項</th><td>効果には個人差があります</td></tr>
         </table>
