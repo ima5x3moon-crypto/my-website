@@ -127,6 +127,9 @@ br.sp{display:none}
 .status.left{color:#FFFFFF;background:#B0524A}
 .door.is-full > :not(.status):not(.no){opacity:.55}
 .door.is-open{border:1.5px solid var(--gold)}
+.dm-note{width:min(460px,100%);background:#FFFFFF;border:1.5px solid var(--gold);border-radius:14px;padding:22px 22px;display:flex;flex-direction:column;gap:8px;box-shadow:0 18px 40px -28px rgba(87,72,120,.35)}
+.dm-note .dm-title{font-family:var(--f-display);font-size:17px;color:var(--gold-deep);letter-spacing:.08em}
+.dm-note p{color:var(--ink)}
 .badge{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.12em;color:#FFFFFF;background:var(--gold-deep);border-radius:999px;padding:1px 12px;margin-right:6px}
 .soon{color:var(--ink-mute);font-size:13.5px}
 
@@ -269,9 +272,9 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:28px;justify-content:space-between;
           </dl>
         </article>
 
-        <article class="door is-open" id="meditation">
+        <article class="door is-full" id="meditation">
           <span class="no">III</span>
-          <span class="status left">残り3名</span>
+          <span class="status full">満席となりました</span>
           <p class="tag">Year-End Meditation</p>
           <h3>年末<br>還元瞑想会</h3>
           <p class="catch">一年分を還して、<br>まっさらな循環へ。</p>
@@ -318,12 +321,11 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:28px;justify-content:space-between;
     <div class="narrow inner">
       <span class="latin" style="font-size:22px;color:var(--gold)">Open the door</span>
       <h2>整った状態で、<br>2027年を迎えましょう。</h2>
-      <p>おかげさまで、大阪対面セッションと2027年特別リーディングは満席となりました。<br>ありがとうございます。</p>
-      <p>現在受付中：<b>年末還元瞑想会（12/26）</b>　<span class="status left" style="display:inline-block">残り3名</span></p>
-      <div class="apply-btns">
-        <a class="btn" href="https://ws.formzu.net/fgen/S805951984/" target="_blank" rel="noopener">瞑想会に申し込む <span class="arr">→</span></a>
+      <p>おかげさまで、３つのセッションすべて満席となりました。<br>本当にありがとうございます。</p>
+      <div class="dm-note">
+        <p class="dm-title">年末還元瞑想会をご希望の方へ</p>
+        <p>本日のインスタライブ後、<br>ご希望の方はインスタグラムのDMを<br>いただけましたら、<br class="sp">枠をお開けいたします。</p>
       </div>
-      <p class="small">外部のお申し込みフォームが開きます</p>
     </div>
   </section>
 </main>
@@ -337,7 +339,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:28px;justify-content:space-between;
   </div>
 </footer>
 
-<div class="sticky-cta" id="stickyCta"><a class="btn" href="#apply">瞑想会 残り3名 <span class="arr">→</span></a></div>
+<div class="sticky-cta" id="stickyCta"><a class="btn" href="#apply">満席のお知らせ <span class="arr">→</span></a></div>
 
 <script>
 (function(){
