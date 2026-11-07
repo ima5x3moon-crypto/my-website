@@ -121,6 +121,12 @@ br.sp{display:none}
 .door dl{margin:auto 0 0;display:grid;grid-template-columns:auto 1fr;gap:8px 16px;border-top:1px solid var(--line);padding-top:18px;font-size:14.5px}
 .door dt{color:var(--ink-mute)}
 .door dd{margin:0;min-width:0}
+/* 空き状況 */
+.status{display:block;width:fit-content;margin:0 auto;font-family:var(--f-body);font-size:13px;font-weight:700;letter-spacing:.16em;padding:3px 16px;border-radius:999px}
+.status.full{color:var(--ink-mute);background:var(--night-2);border:1px solid var(--line-soft)}
+.status.left{color:#FFFFFF;background:#B0524A}
+.door.is-full > :not(.status):not(.no){opacity:.55}
+.door.is-open{border:1.5px solid var(--gold)}
 .badge{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.12em;color:#FFFFFF;background:var(--gold-deep);border-radius:999px;padding:1px 12px;margin-right:6px}
 .soon{color:var(--ink-mute);font-size:13.5px}
 
@@ -224,8 +230,9 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:28px;justify-content:space-between;
       <div class="sec-title"><span class="latin">Three Sessions</span><h2>３つのセッション</h2></div>
       <div class="doors">
 
-        <article class="door" id="osaka">
+        <article class="door is-full" id="osaka">
           <span class="no">I</span>
+          <span class="status full">満席となりました</span>
           <p class="tag">Face to Face in Osaka</p>
           <h3>大阪<br>対面セッション会</h3>
           <p class="catch">直接お会いして、<br>魂とエネルギーを紐解く。</p>
@@ -242,8 +249,9 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:28px;justify-content:space-between;
           </dl>
         </article>
 
-        <article class="door" id="reading">
+        <article class="door is-full" id="reading">
           <span class="no">II</span>
+          <span class="status full">満席となりました</span>
           <p class="tag">Reading for 2027</p>
           <h3>2027年<br>特別リーディング</h3>
           <p class="catch">来年のあなたの流れを、<br>先に受け取る。</p>
@@ -261,8 +269,9 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:28px;justify-content:space-between;
           </dl>
         </article>
 
-        <article class="door" id="meditation">
+        <article class="door is-open" id="meditation">
           <span class="no">III</span>
+          <span class="status left">残り3名</span>
           <p class="tag">Year-End Meditation</p>
           <h3>年末<br>還元瞑想会</h3>
           <p class="catch">一年分を還して、<br>まっさらな循環へ。</p>
@@ -309,11 +318,12 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:28px;justify-content:space-between;
     <div class="narrow inner">
       <span class="latin" style="font-size:22px;color:var(--gold)">Open the door</span>
       <h2>整った状態で、<br>2027年を迎えましょう。</h2>
-      <p>12月だけの特別企画です。<br>心よりお待ちしています。</p>
+      <p>おかげさまで、大阪対面セッションと2027年特別リーディングは満席となりました。<br>ありがとうございます。</p>
+      <p>現在受付中：<b>年末還元瞑想会（12/26）</b>　<span class="status left" style="display:inline-block">残り3名</span></p>
       <div class="apply-btns">
-        <a class="btn" href="https://ws.formzu.net/fgen/S805951984/" target="_blank" rel="noopener">お申し込みはこちら <span class="arr">→</span></a>
+        <a class="btn" href="https://ws.formzu.net/fgen/S805951984/" target="_blank" rel="noopener">瞑想会に申し込む <span class="arr">→</span></a>
       </div>
-      <p class="small">３つのセッション共通のお申し込みフォームです<br>（外部のフォームが開きます）</p>
+      <p class="small">外部のお申し込みフォームが開きます</p>
     </div>
   </section>
 </main>
@@ -327,7 +337,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:28px;justify-content:space-between;
   </div>
 </footer>
 
-<div class="sticky-cta" id="stickyCta"><a class="btn" href="#apply">申し込みはこちら <span class="arr">→</span></a></div>
+<div class="sticky-cta" id="stickyCta"><a class="btn" href="#apply">瞑想会 残り3名 <span class="arr">→</span></a></div>
 
 <script>
 (function(){
